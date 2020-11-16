@@ -1,0 +1,396 @@
+{% extends 'introCom/main.html' %}
+
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/introCom/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>About us <i class="fa fa-chevron-right"></i></span></p>
+        <h1 class="mb-3 bread">Các dự án</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-section ftco-portfolio">
+	<div class="row justify-content-center no-gutters">
+	<div class="col-md-12 heading-section text-center ftco-animate mb-2">
+		<span class="subheading">A2 Company</span>
+		<h2 style="color: #162d61;" class="mb-2">Những công trình nổi bật</h2>
+	</div>
+	</div>
+
+	<div class="container">
+		<div class="row no-gutters">
+			{% for top in tops %}
+				{% if top.id|divisibleby:"2" %}
+				<div class="col-md-12 portfolio-wrap">
+					<div class="row no-gutters align-items-center">
+						<div class="col-md-5 img " style="height: 280px; background-image: url(/{{top.avatar}});">
+							
+						</div>
+						<div class="col-md-7">
+							<div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
+								<div class="px-4 px-lg-4">
+									<div class="desc">
+										<!-- <div class="top"> -->
+										<div class="">
+											<span class="subheading">{{top.date_created|date:"M d, Y"}}</span>
+											<h3 class="mb-4"><a href="#">{{top.name}}</a></h3>
+										</div>
+										<div class="absolute">
+											<p>{{top.content}}</p>
+											<p><a href="#" class="custom-btn">Xem hồ sơ</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% else %}
+				<div class="col-md-12 portfolio-wrap">
+					<div class="row no-gutters align-items-center">
+						<div class="col-md-5 order-md-last img " style="height: 280px; background-image: url(/{{top.avatar}});">
+							
+						</div>
+						<div class="col-md-7">
+							<div class="text pt-5 pr-md-5 ftco-animate">
+								<div class="px-4 px-lg-4">
+									<div class="desc text-md-right">
+										<div class="">
+											<span class="subheading">{{top.date_created|date:"M d, Y"}}</span>
+											<h3 class="mb-4"><a href="work.html">{{top.name}}</a></h3>
+										</div>
+										<div class="absolute">
+											<p>{{top.content}}</p>
+											<p><a href="#" class="custom-btn">Xem hồ sơ</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			{% endfor %}
+
+		</div>
+	</div>
+	</section>
+
+{% endblock %}
+    
+
+    
+
+	  <section class="ftco-section ftco-portfolio">
+    	<div class="container">
+    		<div class="row no-gutters">
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 img js-fullheight" style="background-image: url(images/work-1.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc">
+		  								<div class="top">
+			  								<span class="subheading">Exterior {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Geometric Building</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 order-md-last img js-fullheight" style="background-image: url(images/work-2.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pr-md-5 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc text-md-right">
+		  								<div class="top">
+			  								<span class="subheading">Furniture {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Twin Office</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 img js-fullheight" style="background-image: url(images/work-3.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pl-md-5 pl-md-4 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc">
+		  								<div class="top">
+			  								<span class="subheading">Building {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Cultural Complex Centre</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 order-md-last img js-fullheight" style="background-image: url(images/work-4.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pr-md-5 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc text-md-right">
+		  								<div class="top">
+			  								<span class="subheading">Furniture {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Twin Office</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 img js-fullheight" style="background-image: url(images/work-5.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pl-md-5 pl-md-4 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc">
+		  								<div class="top">
+			  								<span class="subheading">Building {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Cultural Complex Centre</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 order-md-last img js-fullheight" style="background-image: url(images/work-6.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pr-md-5 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc text-md-right">
+		  								<div class="top">
+			  								<span class="subheading">Furniture {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Twin Office</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 img js-fullheight" style="background-image: url(images/work-7.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pl-md-5 pl-md-4 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc">
+		  								<div class="top">
+			  								<span class="subheading">Building {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Cultural Complex Centre</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 order-md-last img js-fullheight" style="background-image: url(images/work-8.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pr-md-5 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc text-md-right">
+		  								<div class="top">
+			  								<span class="subheading">Furniture {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Furniture</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="col-md-12 portfolio-wrap">
+	  				<div class="row no-gutters align-items-center">
+	  					<div class="col-md-5 img js-fullheight" style="background-image: url(images/work-9.jpg);">
+	  						
+	  					</div>
+	  					<div class="col-md-7">
+	  						<div class="text pt-5 pl-md-5 pl-md-4 ftco-animate">
+	  							<div class="px-4 px-lg-4">
+	  								<div class="desc">
+		  								<div class="top">
+			  								<span class="subheading">Building {12/07/2020}</span>
+				  							<h2 class="mb-4"><a href="work.html">Decoration</a></h2>
+			  							</div>
+			  							<div class="absolute">
+				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+				  							<p><a href="#" class="custom-btn">View Portfolio</a></p>
+			  							</div>
+		  							</div>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    	</div>
+    </section>
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">ArchLab.</h2>
+              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <ul class="ftco-footer-social list-unstyled mt-5">
+                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Community</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Team</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reviews</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Our Story</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Meet the team</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Company</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Press</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+	
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    

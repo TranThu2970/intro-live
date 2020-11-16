@@ -1,0 +1,60 @@
+{% extends 'introCom/main.html' %}
+
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/introCom/images/banner-qhdt.png');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>About us <i class="fa fa-chevron-right"></i></span></p>
+        <h1 class="mb-3 bread"></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="ftco-section ftco-portfolio">
+	<div class="row justify-content-center no-gutters">
+	<div class="col-md-12 heading-section text-center ftco-animate mb-2">
+		<span class="subheading">A2 Company</span>
+		<h2 style="color: #162d61;" class="mb-2">Các lĩnh vực hoạt động</h2>
+	</div>
+	</div>
+
+	<div class="container">
+		<div class="row no-gutters">
+			{% for field in fields %}
+            <div class="col-md-12 portfolio-wrap">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-md-3  img " style="height: 220px; background-image: url(/{{field.avatar}});">
+                        
+                    </div>
+                    <div class="col-md-9">
+                        <div class="text pt-2 pr-md-5 ftco-animate">
+                            <div class="px-4 px-lg-4">
+                                <div class="desc text-md-left">
+                                    <div class="">
+                                        <!-- <span class="subheading">{{top.date_created|date:"M d, Y"}}</span> -->
+                                        <h3 class="mb-2"><a href="{% url 'detail' field.slug %}">{{field.name}}</a></h3>
+                                    </div>
+                                    <div class="absolute">
+                                        <p>{{field.content}}</p>
+                                        <p><a href="#" class="custom-btn">Xem chi tiết</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			{% endfor %}
+
+		</div>
+	</div>
+	</section>
+
+{% endblock %}
+    
+    

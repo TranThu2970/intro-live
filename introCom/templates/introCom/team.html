@@ -1,0 +1,46 @@
+{% extends 'introCom/main.html' %}
+
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/introCom/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home <i class="fa fa-chevron-right"></i></a></span> <span>About us <i class="fa fa-chevron-right"></i></span></p>
+        <h1 class="mb-3 bread">Đội ngũ công ty</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row">
+			{% for team in teams %}
+			<div class="col-sm-6 col-md-6 col-lg-3 ftco-animate">
+				<div class="staff">
+					<div class="img-wrap d-flex align-items-stretch justify-content-end">
+						<div class="img align-self-stretch" style="background-image: url(/{{team.avatar}});"></div>
+					</div>
+					<div class="text d-flex align-items-center pt-3">
+						<div>
+							<!-- <h3 class="mb-2">John <br>Wilson</h3> -->
+							<h3 class="mb-2">{{team.name}}<br>-</h3>
+							<span class="position mb-1 font-weight-bold">{{team.position}}</span>
+							<ul class="ftco-social">
+								
+								<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+								
+								<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}		
+		</div>
+	</div>
+</section>
+{% endblock %}

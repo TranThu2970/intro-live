@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Công ty TNHH Kiến trúc xây dựng A2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'introCom/css/animate.css' %}" type="text/css">
+        
+        <link rel="stylesheet" href="{% static 'introCom/css/owl.carousel.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'introCom/css/owl.theme.default.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'introCom/css/magnific-popup.css' %}" type="text/css">
+        
+        <link rel="stylesheet" href="{% static 'introCom/css/flaticon.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'introCom/css/style.css' %}" type="text/css">
+    </head>
+
+    <body>
+        {% include 'introCom/nav.html' %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% include 'introCom/footer.html' %}
+
+        <!-- loader -->
+        <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+        <script type="text/javascript" src="{% static 'introCom/js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/jquery-migrate-3.0.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/popper.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/jquery.easing.1.3.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/jquery.waypoints.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/jquery.stellar.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/jquery.magnific-popup.min.js' %}"></script>
+        <script type="text/javascript"  src="{% static 'introCom/js/jquery.animateNumber.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/scrollax.min.js' %}"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/google-map.js' %}"></script>
+        <script type="text/javascript" src="{% static 'introCom/js/main.js' %}"></script>
+    </body>
+</html>
