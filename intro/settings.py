@@ -118,16 +118,31 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles','static-root')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 
-MEDIA_URL = '/images/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles", "static-root")
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+#STATIC_ROOT = "/home/cfedeploy/webapps/cfehome_static_root/"
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "staticfiles", "media-root")
+####
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR,'static'),
+#]
+#STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles','static-root')
+#MEDIA_URL = '/images/'
 #MEDIA_ROOT = os.path.join(BASE_DIR,'static/introCom/images')
-MEDIA_ROOT = os.path.join(BASE_DIR,'staticfiles','media-root')
+#MEDIA_ROOT = os.path.join(BASE_DIR,'staticfiles','media-root')
 
