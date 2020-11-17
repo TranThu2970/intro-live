@@ -129,3 +129,4 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles','static-root')
 MEDIA_URL = '/images/'
 #MEDIA_ROOT = os.path.join(BASE_DIR,'static/introCom/images')
 MEDIA_ROOT = os.path.join(BASE_DIR,'staticfiles','media-root')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
